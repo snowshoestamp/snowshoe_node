@@ -18,7 +18,7 @@ var Snowshoe = require('showshoe')
 
 On instantiation of the Snowshoe client, pass in your SNOWSHOE_APP_KEY & SNOWSHOE_APP_SECRET, respectively.
 
-Currently, all posts are made to v2 of the API at http://beta.snowshoestamp.com/v2/stamp.
+Currently, all posts are made to v2 of the API at http://beta.snowshoestamp.com/api/v2/stamp.
 
 The data object is constructed from the point data sent by your front-end stamp screen.
 
@@ -57,10 +57,10 @@ Below are examples of success and error JSON responses from the API.
     "message": "Stamp not found",
     "code": 32
     },
-    "receipt": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    "secure": false,
-    "created": "2015-03-24 11:27:48.235046"
-  }
+  "receipt": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "secure": false,
+  "created": "2015-03-24 11:27:48.235046"
+}
 ```
 
 ## Tests
