@@ -1,6 +1,6 @@
 {
   "name": "snowshoe",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Node API Client for the Snowshoe API",
   "author": "Snowshoe",
   "contributors": [
@@ -19,6 +19,7 @@
     "snowshoe"
   ],
   "dependencies": {
-    "oauth": ">=0.9.12"
+    "oauth": ">=0.9.12",
+    "q": ">=1.0.0"
   }
 }
