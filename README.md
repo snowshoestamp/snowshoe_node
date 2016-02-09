@@ -5,6 +5,7 @@ The Snowshoe node client submits point data to the Snowshoe API for authenticati
 
 ## Dependencies
 - oauth
+- q
 
 ## Installation
 ```javascript
@@ -28,14 +29,35 @@ The client will return a JSON object, containing either the serial of the matche
 var client = new Snowshoe.client(SNOWSHOE_APP_KEY, SNOWSHOE_APP_SECRET);
 var data = {data: request.body.data};
 
-// in order for the callback to behave correctly inside OAuth
-// you must include the route's response object as the second argument
-client.post(data, response, function(error, data, response){
+client.post(data, function(error, data){
   if (error) {
     // handle errors
   };
   // handle success
 })
+```
+
+Optionally, you can inspect the whole OAuth response object if you'd like.
+
+```javascript
+var client = new Snowshoe.client(SNOWSHOE_APP_KEY, SNOWSHOE_APP_SECRET);
+var data = {data: request.body.data};
+
+client.post(data, function(error, data, oauthResponse){
+  console.log(oauthResponse.statusCode)
+  // add conditional logic based on OAuth's response
+})
+```
+
+Or return a promise instead (via Q).
+
+```javascript
+client.post(data).then(function (data) {
+    // handle success
+  })
+  .catch(function (error) {
+    // handle errors
+  });
 ```
 
 Below are examples of success and error JSON responses from the API.
