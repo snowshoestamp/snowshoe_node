@@ -55,8 +55,8 @@ Or return a promise instead (via Q).
 client.post(data).then(function (data) {
     // handle success
   })
-  .fail(function (error) {
-    // handle success
+  .catch(function (error) {
+    // handle errors
   });
 ```
 
